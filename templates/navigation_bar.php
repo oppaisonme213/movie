@@ -26,11 +26,11 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
     </ul>
 
     <ul class="navbar-nav ml-auto mr-4 border-left pl-1">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Login</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
       </li>
 
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Register</a>
       </li>
       
