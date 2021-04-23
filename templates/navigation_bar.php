@@ -1,6 +1,6 @@
 <?php
 
-echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
+echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand ml-5" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-photo d-block text-center fa-lg"></i>Movies</a>
+        <a class="nav-link" href="#"><i class="fa fa-film d-block text-center fa-lg"></i>Movies</a>
       </li>
 
       <li class="nav-item">
