@@ -3,6 +3,12 @@
   border-bottom: solid .05rem whitesmoke;
 }
 
+.carousel-indicators li {
+  border-radius: 50%/50%;
+  width: 16px;
+  height: 16px;
+}
+
 .carousel-item div{
   height: 35rem!important;
   overflow: hidden;

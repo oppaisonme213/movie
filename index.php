@@ -20,6 +20,11 @@
     ?>
     <div>
       <div id="slider1" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#slider1" data-slide-to="0" class="active"></li>
+          <li data-target="#slider1" data-slide-to="1"></li>
+          <li data-target="#slider1" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="d-block w-100" alt="First slide"></div>
