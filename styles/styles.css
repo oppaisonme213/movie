@@ -1,15 +1,23 @@
+body {
+  background-color: rgb(54, 54, 54);
+}
+
 .bg-dark {
   background-color: rgb(22, 19, 19)!important;
   border-bottom: solid .05rem whitesmoke;
 }
 
-.carousel-indicators li {
+.movies1 {
+  margin: 10rem 10rem;
+}
+
+#slider1 .carousel-indicators li {
   border-radius: 50%/50%;
   width: 16px;
   height: 16px;
 }
 
-.carousel-item div{
+#slider1 .carousel-item div{
   height: 35rem!important;
   overflow: hidden;
   background-position: bottom;
@@ -17,18 +25,48 @@
   background-repeat: no-repeat;
 }
 
-.carousel-inner div:nth-child(1) div{
+#slider1 .carousel-inner div:nth-child(1) .header-slide{
   background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
 }
 
-.carousel-inner div:nth-child(2) div{
+#slider1 .carousel-inner div:nth-child(2) .header-slide{
   background-image: url('https://www.boxofficepro.com/wp-content/uploads/2020/04/Santikos-lobby-post-renovation-scaled.jpg');
   background-position: center;
 
 }
 
-.carousel-inner div:nth-child(3) div{
+#slider1 .carousel-inner div:nth-child(3) .header-slide{
   background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNpbmVtYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80');
+}
+
+#slider2 .carousel-indicators li {
+  border-radius: 50%/50%;
+  width: 16px;
+  height: 16px;
+}
+
+#slider2 .carousel-item div{
+  height: 35rem!important;
+  overflow: hidden;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#slider2 .carousel-inner div:nth-child(1) div{
+  /* background-color: yellow; */
+}
+
+#slider2 .carousel-inner div:nth-child(2) div{
+  background-color: green;
+}
+
+#slider2 .carousel-inner div:nth-child(3) div{
+  background-color: red;
+}
+
+#slider2 .carousel-inner div:nth-child(4) div{
+  background-color: aqua;
 }
 
 .navbar-brand {
@@ -38,10 +76,4 @@
   background-repeat: no-repeat;
   height: 5.7rem;
   width: 7rem;
-}
-
-.slideshow {
-  height: 30rem;
-  margin: auto;
-  width: 80%;
 }
