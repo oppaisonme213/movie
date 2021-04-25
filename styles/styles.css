@@ -2,13 +2,61 @@ body {
   background-color: rgb(54, 54, 54);
 }
 
+.btn-group .active {
+  background-color: rgba(255, 255, 255, 0.247);
+}
+
+.btn-group {
+  display: inline-block!important;
+}
+.btn-group, .btn-group-vertical {
+  display: inline-block!important;
+
+}
+
 .bg-dark {
   background-color: rgb(22, 19, 19)!important;
   border-bottom: solid .05rem whitesmoke;
 }
 
+.card {
+  background-color: transparent;
+  border: solid 0.1rem white;
+  color: white;
+  height: 20rem;
+}
+
+.card-body {
+  background-color: transparent;
+}
+
+.card img{
+  height: 50%!important;
+}
+
 .movies1 {
-  margin: 10rem 10rem;
+  margin: 2rem 10rem;
+}
+
+.movie-slide {
+  overflow-x: hidden!important;
+  overflow-y: scroll!important;
+}
+
+.movie-slide::-webkit-scrollbar {
+ background-color: transparent;
+ width: 10px;
+}
+
+.movie-slide::-webkit-scrollbar-thumb {
+  border-radius: 50%/10%;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.seat-col {
+  border-left: red .6rem solid!important;
+  border-right: red .6rem solid!important;
+
 }
 
 #slider1 .carousel-indicators li {
@@ -45,7 +93,7 @@ body {
   height: 16px;
 }
 
-#slider2 .carousel-item div{
+#slider2 .carousel-item .movie-slide{
   height: 35rem!important;
   overflow: hidden;
   background-position: bottom;
@@ -53,20 +101,20 @@ body {
   background-repeat: no-repeat;
 }
 
-#slider2 .carousel-inner div:nth-child(1) div{
-  /* background-color: yellow; */
+#slider2 .carousel-inner div:nth-child(1) .movie-slide{
+  background-color: transparent;
 }
 
-#slider2 .carousel-inner div:nth-child(2) div{
+#slider2 .carousel-inner div:nth-child(2) .movie-slide{
   background-color: green;
 }
 
-#slider2 .carousel-inner div:nth-child(3) div{
-  background-color: red;
+#slider2 .carousel-inner div:nth-child(3) .movie-slide{
+  background-color: transparent;
 }
 
-#slider2 .carousel-inner div:nth-child(4) div{
-  background-color: aqua;
+#slider2 .carousel-inner div:nth-child(4) .movie-slide{
+  background-color: rgba(255,255,255,.5);
 }
 
 .navbar-brand {
