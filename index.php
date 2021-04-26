@@ -1,5 +1,7 @@
 <?php
   require_once 'php/init.php';
+  require 'templates/modal.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@
     </div>
 
     <div class="movies1">
-      <div id="slider2" class="carousel slide" data-ride="carousel">
+      <div id="slider2" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner"> 
 
           <?php
@@ -41,6 +43,8 @@
             echo '</div>';
             echo '</div>';
             echo '</div>';
+            echo '</div>';
+
             
           ?>
 
@@ -55,6 +59,8 @@
           echo '</div>';
           echo '</div>';
           echo '</div>';
+          echo '</div>';
+
           ?>
             
 
@@ -64,27 +70,25 @@
             <?php
               if(isset($_POST['submit'])){
                 getSeats($_POST['submit']);
+                echo '</div>';
 
+                require 'templates/form.php';
               }else {
                 echo '<h3 class="text-center text-white mt-5">Select a Movie to see available seating';
               }
             ?>
-            <button type='submit' id='movie_info' name ='submit2' class='btn btn-success btn-sm d-block m-auto mt-5'>Confirm Seat
+            
+          </div>
+          
+          
           </div>
             
-            </div>
           </div>
-
         </div>
       </div>
     </div>
-    <?php
-    
-      // getSeats($_POST['submit1']);
-       
-  ?>
-    
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

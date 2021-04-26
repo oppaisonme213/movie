@@ -13,6 +13,12 @@ body {
   display: inline-block!important;
 
 }
+.btn-sm{
+  padding: 1.25rem 0.5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: 4.2rem;
+}
 
 .bg-dark {
   background-color: rgb(22, 19, 19)!important;
@@ -32,6 +38,16 @@ body {
 
 .card img{
   height: 50%!important;
+}
+
+#info-form {
+  margin-top: 5rem!important;
+  margin-bottom: 5rem!important;
+  background-color: lightgray;
+  border: solid .1rem rgba(0, 0, 0, 0.486);
+  height: fit-content;
+  border-radius: 6%/6%;
+  width: 55%;
 }
 
 .movies1 {

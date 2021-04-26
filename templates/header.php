@@ -1,6 +1,6 @@
 <?php
   echo '<div>
-  <div id="slider1" class="carousel slide" data-ride="carousel">
+  <div id="slider1" class="carousel slide" data-ride="carousel" data-wrap="true">
     <ol class="carousel-indicators">
       <li data-target="#slider1" data-slide-to="0" class="active"></li>
       <li data-target="#slider1" data-slide-to="1"></li>

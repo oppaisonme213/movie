@@ -21,7 +21,9 @@ class view extends config{
           echo "<div class='carousel-item active'>";
           echo "<h3 class='text-center py-4 text-light'> Now Playing!</h3>";
           echo "<div class='d-block w-100 movie-slide' alt='First slide'>";
-          echo "<div class='card-deck mb-4'>";
+          echo "<div class='card-group mb-4'>";
+          echo "<div class='row no-gutters'>";
+
         }
 
         if($cardCount >= 4){
@@ -29,26 +31,36 @@ class view extends config{
           $cardDeck++;
           if($cardDeck <= 1){
             echo "</div>";
-            echo "<div class='card-deck mb-4'>";
+            echo "</div>";
+
+            echo "<div class='card-group mb-4'>";
+            echo "<div class='row no-gutters'>";
+
           }else if($cardDeck > 1){
             echo "</div>";
             echo "</div>";
+            echo "</div>";
 
-            echo "<div class='card-deck mb-4'>";
+
+            echo "<div class='card-group mb-4'>";
+            echo "<div class='row no-gutters'>";
+
             $cardDeck = 0;
           }
         }
 
-        echo "<div class='card'>
-              <img class='img-card-top' src=$data[image_path] alt='Card image cap'>
-              <div class='card-body m-auto text-center'>
-                <h6 class='card-title text-center'>$data[movie_name]</h6>
-                <form method='POST'>
-                  <button type='submit' id='movie_info' name ='submit' value='$data[movie_id]'class='btn btn-success btn-sm movie-btn' data-toggle='modal' data-target='#seatModal'>
-                  <i class='fa fa-ticket nav-text text-center fa-lg'><div class='my-2'>Book Seat</div></i></button>
-                </form>
-              </div>
-            </div>";
+        echo "<div class='col-lg-3'>
+                <div class='card'>
+                <img class='img-card-top' src=$data[image_path] alt='Card image cap'>
+                  <div class='card-body m-auto text-center'>
+                    <h6 class='card-title text-center'>$data[movie_name]</h6>
+                    <form method='POST'>
+                      <button type='submit' id='movie_info' name ='submit' value='$data[movie_id]'class='btn btn-outline-light btn-sm movie-btn'>
+                      <i class='fa fa-ticket nav-text text-center fa-lg'><div class='my-2'>Book Seat</div></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>";
             $caroCount++; 
             $cardCount++;
       }
@@ -74,12 +86,12 @@ class view extends config{
     foreach ($result as $data){
       if($colCount <= 0){
         echo '<div id="movie-seat-row" class="row">
-                <div class="col-6 seat-col d-flex justify-content-around border border-dark">';
+                <div class="col-md-6 seat-col d-flex justify-content-around border border-dark">';
           $colCount++;
       }
 
       if($entries <= 8){
-        echo "<label class='btn btn-sm btn-seat'>
+        echo "<label class='btn btn-sm btn-seat p-1 m-0'>
         ";
         if(boolval($data['is_available']) === true){
           echo "<input type='radio' name='options' id='option1' autocomplete='off'>
@@ -105,7 +117,7 @@ class view extends config{
           $colCount++;
           $entries = 0;
           echo '</div>';
-          echo '<div class="col-6 seat-col d-flex justify-content-around border border-dark">';
+          echo '<div class="col-md-6 seat-col d-flex justify-content-around border border-dark">';
         }
       }
       
@@ -131,6 +143,8 @@ class view extends config{
           echo "<h3 class='text-center py-4 text-light'> Available Treats!</h3>";
           echo "<div class='d-block w-100 movie-slide' alt='Third slide'>";
           echo "<div class='card-deck mb-4'>";
+          echo "<div class='row m-auto no-gutters'>";
+
         }
 
         if($cardCount >= 4){
@@ -138,23 +152,34 @@ class view extends config{
           $cardDeck++;
           if($cardDeck <= 1){
             echo "</div>";
+            echo "</div>";
             echo "<div class='card-deck mb-4'>";
+            echo "<div class='row m-auto no-gutters'>";
+
           }else if($cardDeck > 1){
+            echo '<div class="w-100 d-none d-md-block"></div>';
+
+            echo "</div>";
             echo "</div>";
             echo "</div>";
 
+
             echo "<div class='card-deck mb-4'>";
+            echo "<div class='row m-auto no-gutters'>";
+
             $cardDeck = 0;
           }
         }
 
-        echo "<div class='card'>
-              <img class='img-card-top' src=$data[image_source] alt='Card image cap'>
-              <div class='card-body m-auto text-center'>
-                <h6 class='card-title text-center'>$data[food_name]</h6>
-                <div class='text-center text-light'>$data[price] php</div>
-              </div>
-            </div>";
+          echo " <div class='col-lg-3'>
+                  <div class='card'>
+                    <img class='img-card-top' src=$data[image_source] alt='Card image cap'>
+                    <div class='card-body m-auto text-center'>
+                      <h6 class='card-title text-center'>$data[food_name]</h6>
+                      <div class='text-center text-light'>$data[price] php</div>
+                    </div>
+                  </div>
+                </div>";
             $caroCount++; 
             $cardCount++;
       }

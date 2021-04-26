@@ -31,7 +31,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
+        <a href="#exampleModal" class="nav-link" data-toggle="modal">Register</a>
       </li>
       
     </ul>
