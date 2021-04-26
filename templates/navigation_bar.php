@@ -21,6 +21,10 @@
       <li class="nav-item">
         <a class="nav-link" href="#options" ><i class="fa fa-beer d-block text-center fa-lg"></i>Food</a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#about-us" ><i class="fa fa-phone d-block text-center fa-lg"></i>About Us</a>
+      </li>
     </ul>
 
     <ul class="navbar-nav ml-auto mr-4 border-left pl-1">

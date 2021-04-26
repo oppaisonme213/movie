@@ -80,12 +80,12 @@ body {
 
 .movie-slide::-webkit-scrollbar {
  background-color: transparent;
- width: 10px;
+ width: 7px;
 }
 
 .movie-slide::-webkit-scrollbar-thumb {
-  border-radius: 50%/10%;
-  background-color: rgba(0, 0, 0, 0.61);
+  border-radius: 40%/10%;
+  background-color: rgba(255, 255, 255, 0.452);
 }
 
 .seat-col {
