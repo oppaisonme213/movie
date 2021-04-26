@@ -85,6 +85,8 @@ class view extends config{
     echo '<span><img class="booking-img w-50 d-block ml-auto mr-auto mb-4" src='.$result[1]['image_path'].'></span>';
 
     foreach ($result as $data){
+        echo '<input type="hidden" name="movie_name" value="'.$result[1]['movie_name'].'">';
+
       if($colCount <= 0){
         echo '<div id="movie-seat-row" class="row">
                 <div class="col-md-6 seat-col d-flex justify-content-around border border-dark">';
@@ -92,17 +94,25 @@ class view extends config{
       }
 
       if($entries <= 8){
-        echo "<label class='btn btn-sm btn-seat p-1 m-0'>
-        ";
+        echo "<label class='btn btn-sm btn-seat p-1 m-0'>";
+        
+
         if(boolval($data['is_available']) === true){
-          echo "<input type='radio' name='seat_number' id='option' autocomplete='off' value=$data[seat_id]>
+          echo "<input type='radio' name='seat_id' value=$data[seat_id]>
+                
           <i class='btn-seat fas fa-couch text-dark d-block'></i>";
+
+          
+
         }else if(boolval($data['is_available']) === false) {
-          echo "<input type='radio' name='seat_number' id='option' autocomplete='off' disabled value=$data[seat_id]>
+          echo "<input type='radio' name='seat_id' disabled value=$data[seat_id]>
           <i class='btn-seat fas fa-couch text-white d-block'></i>";
+
+
         }
         echo "<p class='d-block'> $data[seat_number] </p>
-        </label>";
+        </label>"
+        ;
         $entries++;
       }
 
@@ -142,7 +152,7 @@ class view extends config{
         if($caroCount === 0){
           echo "<div id='food_container'class='carousel-item'>";
           echo "<h3 class='text-center py-4 text-light'> Available Treats!</h3>";
-          echo "<div class='d-block w-100 movie-slide' alt='Third slide'>";
+          echo "<div class='d-block w-100 movie-slide' alt='Second slide'>";
           echo "<div class='card-deck mb-4'>";
           echo "<div class='row m-auto no-gutters'>";
 
@@ -188,7 +198,7 @@ class view extends config{
     }
   }
 
-  function getUser($firstname, $lastname, $email, $pass, $seatNumber){
+  function getUser($firstname, $lastname, $email, $pass, $seat_id, $movie_name){
     $con = $this->con();
     $sql = "SELECT * FROM `user_table` WHERE firstName = ? AND lastName = ? AND email = ? AND pass = ?;";
 
@@ -199,7 +209,7 @@ class view extends config{
       $result=$data->fetchAll(PDO::FETCH_ASSOC);
 
       if($result != null && $result != 0){
-        $this->bookSeat($result[0]['user_id'], $seatNumber);
+        $this->bookSeat($result[0]['user_id'],$firstname, $lastname, $email, $seat_id, $movie_name);
       }else {
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Failed to Sign Up.</strong> User not found!
@@ -215,9 +225,9 @@ class view extends config{
 
   }
 
-  function bookSeat($user_id, $seatNumber){
+  function bookSeat($user_id, $firstname, $lastname, $email, $seat_id, $movie_name){
     $insert = new insert;
-    $insert->bookSeat($user_id, $seatNumber);
+    $insert->bookSeat($user_id, $firstname, $lastname, $email, $seat_id, $movie_name);
   }
 }
 

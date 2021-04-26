@@ -11,15 +11,15 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-film d-block text-center fa-lg"></i>Movies</a>
+        <a class="nav-link" href="#options"><i class="fa fa-film d-block text-center fa-lg"></i>Movies</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-ticket d-block text-center fa-lg"></i>Promo</a>
+        <a class="nav-link" href="#options"><i class="fa fa-couch d-block text-center fa-lg"></i>Seats</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#slider2" data-slide-to="2" target=_blank><i class="fa fa-beer d-block text-center fa-lg"></i>Food</a>
+        <a class="nav-link" href="#options" ><i class="fa fa-beer d-block text-center fa-lg"></i>Food</a>
       </li>
     </ul>
 

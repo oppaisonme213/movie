@@ -1,3 +1,7 @@
+.alert {
+  width: fit-content;
+  margin: auto;
+}
 body {
   background-color: rgb(22, 19, 19)!important;
   font-family: 'Cantarell', sans-serif;
@@ -137,14 +141,10 @@ body {
 }
 
 #slider2 .carousel-inner div:nth-child(2) .movie-slide{
-  background-color: green;
-}
-
-#slider2 .carousel-inner div:nth-child(3) .movie-slide{
   background-color: transparent;
 }
 
-#slider2 .carousel-inner div:nth-child(4) .movie-slide{
+#slider2 .carousel-inner div:nth-child(3) .movie-slide{
   background-color: rgba(255,255,255,.5);
 }
 

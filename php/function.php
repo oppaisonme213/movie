@@ -21,8 +21,8 @@
 
   }
 
-  function getUser($firstname, $lastname, $email, $pass, $seatNumber){
+  function getUser($firstname, $lastname, $email, $pass, $seat_id, $movie_name){
     $view = new view;
-    $view->getUser($firstname, $lastname, $email, $pass, $seatNumber);
+    $view->getUser($firstname, $lastname, $email, $pass, $seat_id, $movie_name);
   }
 ?>

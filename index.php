@@ -30,13 +30,12 @@
     <div class="buttons w-100 text-center my-5">
       <div class="btn-group m-auto" role="group" aria-label="Basic example">
         <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="0">Now Showing</button>
-        <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="1">Coming Soon</button>
-        <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="2">Snacks</button>
-        <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="3">Available Seats</button>
+        <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="1">Snacks</button>
+        <button type="button" class="btn btn-secondary mx-2" href="#slider2" data-slide-to="2">Available Seats</button>
       </div>
     </div>
 
-    <div class="movies1">
+    <div id="options" class="movies1">
       <div id="slider2" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner"> 
 
@@ -48,12 +47,6 @@
             echo '</div>';
           ?>
 
-          <div class="carousel-item">
-            <div class="d-block w-100 movie-slide" alt="Second slide">
-
-            </div>
-          </div>
-
           <?php
             showSnacks();
             echo '</div>';
@@ -64,7 +57,7 @@
             
 
           <div class="carousel-item">
-            <div class="d-block w-100 movie-slide" alt="Forth slide">
+            <div class="d-block w-100 movie-slide" alt="Third slide">
               <form action="" method="post">
                 <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
                   <?php
@@ -82,12 +75,38 @@
               </form>
               <?php
                 if(isset($_POST['form-submit'])){
-
-                  getUser($_POST['firstName'],$_POST['lastName'],$_POST['email'],$_POST['password'],$_POST['seat_number']);
+                  getUser($_POST['firstName'],$_POST['lastName'],$_POST['email'],$_POST['password'],$_POST['seat_id'], $_POST['movie_name']);
                 }
                 ?>
             </div>  
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-us">
+      <div class="about-us m-5 py-5">
+        <hr>
+
+        <div class="row">
+          <div class="col-5">
+            <div class="text-center">
+              <img class="mt-5 pt-5"src="images/logo3.png">
+            </div>
+
+          </div>
+
+          <div class="col-7">
+          <h3 id="about_us" class="text-center mt-2 mb-5 text-light">About Us</h3>
+
+            <div><h5 class="text-light">SkyFlixs is a Movie Theater company established in 2021, specializing in family entertainment. The bussiness is inspired mainly by the owner's wanting to provide entertainment at a decent price – since theaters are becoming more expensive, is an important part of a ceremony in entertaining customers, that reflects a sign of respect and value for the guests. <br><br>SkyFlixs guarentees enjoyment and fun at a decent price with your money back guarenteed.</h5>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <div class="footer border-top border-ligt">
+        <div class="copyrights mx-3"><p class="text-center text-light py-3">©Copyright - SkyFlix 2021 | Website by IT Student's of BSIT - 3A | All Rights Reserved</p></div>
         </div>
       </div>
     </div>

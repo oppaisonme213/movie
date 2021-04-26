@@ -19,7 +19,7 @@
             <input type="email" autocomplete="off" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" name="email">
           </div>
           <div class="form-group">
-            <input type="password" autocomplete="off" class="form-control" id="password" placeholder="Password" name="password">
+            <input type="password" autocomplete="new-password" class="form-control" id="password" placeholder="Password" name="password">
           </div>
           <button type="submit" class="btn btn-outline-dark" name="submitModal" value="submitModal">Register</button>
         </form>
@@ -34,6 +34,7 @@
 
 <?php
   if(isset($_POST['submitModal'])){
+    print_r($_POST);
     registerUser($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']);
   };
 ?>
