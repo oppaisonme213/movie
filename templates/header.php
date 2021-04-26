@@ -1,5 +1,4 @@
-<?php
-  echo '<div>
+<div>
   <div id="slider1" class="carousel slide" data-ride="carousel" data-wrap="true">
     <ol class="carousel-indicators">
       <li data-target="#slider1" data-slide-to="0" class="active"></li>
@@ -30,6 +29,4 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>'
-
-?>
+</div>
