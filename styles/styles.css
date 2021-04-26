@@ -1,9 +1,19 @@
 body {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(22, 19, 19)!important;
+  font-family: 'Cantarell', sans-serif;
+}
+.booking-img {
+  box-shadow: 4px -13px 14px 11px rgb(105 105 105);
+}
+
+[type='radio'] {
+  display: none; 
 }
 
 .btn-group .active {
-  background-color: rgba(255, 255, 255, 0.247);
+  border: .1rem solid rgba(255, 0, 0, 0.247);
+  color: white;
+  background-color: rgb(104, 104, 104);
 }
 
 .btn-group {
@@ -40,18 +50,23 @@ body {
   height: 50%!important;
 }
 
+.form-border {
+  border-radius: 9%/12%;
+}
 #info-form {
   margin-top: 5rem!important;
   margin-bottom: 5rem!important;
   background-color: lightgray;
   border: solid .1rem rgba(0, 0, 0, 0.486);
   height: fit-content;
+  padding: 4rem;
   border-radius: 6%/6%;
   width: 55%;
 }
 
 .movies1 {
   margin: 2rem 10rem;
+  box-shadow: 11px 17px 30px 12px rgb(105, 105, 105);
 }
 
 .movie-slide {
@@ -70,8 +85,8 @@ body {
 }
 
 .seat-col {
-  border-left: red .6rem solid!important;
-  border-right: red .6rem solid!important;
+  border-left: black .6rem solid!important;
+  border-right: black .6rem solid!important;
 
 }
 

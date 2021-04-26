@@ -25,10 +25,6 @@
 
     <ul class="navbar-nav ml-auto mr-4 border-left pl-1">
       <li class="nav-item">
-        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item">
         <a href="#exampleModal" class="nav-link" data-toggle="modal">Register</a>
       </li>
       

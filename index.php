@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkyFlixs</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6b64ccbc3b.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="styles/styles.css">
@@ -73,12 +75,10 @@
 
                       
                     }else {
-                      echo '<h3 class="text-center text-white mt-5">Select a Movie to see available seating';
-                      require 'templates/form.php';
+                      echo '<h5 class="text-center text-white mt-5">Select a Movie to see available seating</h5><hr>';
                     }
                   ?>            
                 </div>
-                
               </form>
               <?php
                 if(isset($_POST['form-submit'])){

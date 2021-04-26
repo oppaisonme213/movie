@@ -39,7 +39,6 @@ class view extends config{
           }else if($cardDeck > 1){
             echo "</div>";
             echo "</div>";
-            echo "</div>";
 
 
             echo "<div class='card-group mb-4'>";
@@ -83,6 +82,8 @@ class view extends config{
     // print_r($result);
 
     echo '<h3 class="text-center text-light py-4">'.$result[1]['movie_name'].'</h3>';
+    echo '<span><img class="booking-img w-50 d-block ml-auto mr-auto mb-4" src='.$result[1]['image_path'].'></span>';
+
     foreach ($result as $data){
       if($colCount <= 0){
         echo '<div id="movie-seat-row" class="row">
@@ -194,9 +195,18 @@ class view extends config{
     $data = $con->prepare($sql);
     // $result=$data->fetchAll(PDO::FETCH_ASSOC);
     try{
-      if($data->execute([$firstname, $lastname, $email, $pass])){
-        $result=$data->fetchAll(PDO::FETCH_ASSOC);
+      $data->execute([$firstname, $lastname, $email, $pass]);
+      $result=$data->fetchAll(PDO::FETCH_ASSOC);
+
+      if($result != null && $result != 0){
         $this->bookSeat($result[0]['user_id'], $seatNumber);
+      }else {
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Failed to Sign Up.</strong> User not found!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+        </div>';
       }
     }catch(PDOException $e){
 
