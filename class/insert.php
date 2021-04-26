@@ -7,10 +7,8 @@ class insert extends config{
     $con = $this->con();
     $sql = "INSERT INTO `user_table`(firstname, lastname, email, pass)VALUES(?,?,?,?);";
     $data = $con->prepare($sql);
-    $data->execute([$firstname, $lastname, $email, $password]);
     try{
     if($data->execute([$firstname, $lastname, $email, $password])){
-      $result = $data->execute([$firstname, $lastname, $email, $password]);
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                   <strong>Successfully Signed Up!</strong> Thank you for registering.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
