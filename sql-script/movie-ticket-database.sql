@@ -180,3 +180,5 @@ while y <= x do
 end while;
 end \\
 delimiter ;
+
+select * from user_table;
