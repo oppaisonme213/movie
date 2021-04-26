@@ -34,7 +34,6 @@
 
 <?php
   if(isset($_POST['submitModal'])){
-    print_r($_POST);
     registerUser($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']);
   };
 ?>
