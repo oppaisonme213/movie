@@ -36,7 +36,7 @@ image_source varchar(255),
 price varchar(255)
 );
 
-insert into user_table(firstName, lastName, email)values("Billy", "Bob", "BillyBob@farmersUnion.org", "corn");
+insert into user_table(firstName, lastName, email, pass)values("Billy", "Bob", "BillyBob@farmersUnion.org", "corn");
 
 insert into food_table(food_name, image_source, price)values("Lay's Potato Chips","https://static.wikia.nocookie.net/the-snack-encyclopedia/images/9/95/Lay%27s.jpg/revision/latest?cb=20200706030018", "199.00");
 insert into food_table(food_name, image_source, price)values("Hotdog", "https://upload.wikimedia.org/wikipedia/commons/f/fb/Hotdog_-_Evan_Swigart.jpg", "99.00");
@@ -137,13 +137,32 @@ insert into seat_table(seat_number)values("H7");
 insert into seat_table(seat_number)values("H8");
 insert into seat_table(seat_number)values("H9");
 
--- set which seats are available here ('movie_id', 'movie_id', 'maximum 10 randomly sets what seats are available') --
+-- Populates movie_seat_table with available seats --
+-- **REQUIRED** --
+delimiter \\
+create procedure populateMovieSeatTable(in movie int)
+begin
+declare x int default 1;
+while x <= 72 do
+	insert into movie_seat_table(movie_id, seat_id)values(movie, x);
+	set x = x + 1;
+end while;
+
+end \\
+delimiter ;
+
+-- Call Proceudre 9 times (1 - 9) --
+call populateMovieSeatTable(9);
+
+
+
+-- set which seats are available here ('movie_id', 'movie_id', 'maximum 10, minimum 2 randomly sets what seats are available') --
 -- THIS IS REQUIRED TO SET SEATS UNBOOKABLE --
-call setBooked(1, 1, 1);
+call setBooked(9, 9, 2);
 
 -- after setting booked view changes here and movie on to the next movie_id --
 select * from movie_seat_table
-where movie_id = 1;
+where movie_id = 9;
 
 delimiter \\
 create procedure setBooked(in id int, in times int, in multiple int)
@@ -161,52 +180,3 @@ while y <= x do
 end while;
 end \\
 delimiter ;
-
-call getSeats(9);
-
--- Gets seats to display in html --
-delimiter \\
-create procedure getSeats(in movie int)
-begin
-declare x int default 1;
-while x <= 72 do
-	insert into movie_seat_table(movie_id, seat_id)values(movie, x);
-	set x = x + 1;
-end while;
-
-end \\
-delimiter ;
-select * from movie_seat_table;
-
-update table movie_seat_table
-join user_table
-on movie_seat_table.user_id = user_table.user_id
-join seat_table
-on movie_seat_table.seat_id = seat_table.seat_id
-where user_table.email = email and user_table.pass = pass
-
-delimiter \\
-create procedure bookSeat(in user_id int, in seat int)
-begin
-
-update movie_seat_table
-join user_table
-on movie_seat_table.user_id = user_table.user_id
-join seat_table
-on movie_seat_table.seat_id = seat_table.seat_id
-set movie_seat_table.is_available = 0 and movie_seat_user_id = user_id 
-where movie_seat_table.movie_seat_id = seat;
-
-end \\
-delimiter ;
-
-delimiter \\
-create procedure verifyUser(in email varchar(255), in pass varchar(255), out user_id int)
-begin
-
-select user_table.user_id from user_table
-where user_table.email = email and user_table.pass = pass; 
-
-end \\
-delimiter ;
-
