@@ -1,0 +1,158 @@
+.alert {
+  width: fit-content;
+  margin: auto;
+}
+body {
+  background-color: rgb(22, 19, 19)!important;
+  font-family: 'Cantarell', sans-serif;
+}
+.booking-img {
+  box-shadow: 4px -13px 14px 11px rgb(105 105 105);
+}
+
+[type='radio'] {
+  display: none; 
+}
+
+.btn-group .active {
+  border: .1rem solid rgba(255, 0, 0, 0.247);
+  color: white;
+  background-color: rgb(104, 104, 104);
+}
+
+.btn-group {
+  display: inline-block!important;
+}
+.btn-group, .btn-group-vertical {
+  display: inline-block!important;
+
+}
+.btn-sm{
+  padding: 1.25rem 0.5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: 4.2rem;
+}
+
+.bg-dark {
+  background-color: rgb(22, 19, 19)!important;
+  border-bottom: solid .05rem whitesmoke;
+}
+
+.card {
+  background-color: transparent;
+  border: solid 0.1rem white;
+  color: white;
+  height: 20rem;
+}
+
+.card-body {
+  background-color: transparent;
+}
+
+.card img{
+  height: 50%!important;
+}
+
+.form-border {
+  border-radius: 9%/12%;
+}
+#info-form {
+  margin-top: 5rem!important;
+  margin-bottom: 5rem!important;
+  background-color: lightgray;
+  border: solid .1rem rgba(0, 0, 0, 0.486);
+  height: fit-content;
+  padding: 4rem;
+  border-radius: 6%/6%;
+  width: 55%;
+}
+
+.movies1 {
+  margin: 2rem 10rem;
+  box-shadow: 11px 17px 30px 12px rgb(105, 105, 105);
+}
+
+.movie-slide {
+  overflow-x: hidden!important;
+  overflow-y: scroll!important;
+}
+
+.movie-slide::-webkit-scrollbar {
+ background-color: transparent;
+ width: 7px;
+}
+
+.movie-slide::-webkit-scrollbar-thumb {
+  border-radius: 40%/10%;
+  background-color: rgba(255, 255, 255, 0.452);
+}
+
+.seat-col {
+  border-left: black .6rem solid!important;
+  border-right: black .6rem solid!important;
+
+}
+
+#slider1 .carousel-indicators li {
+  border-radius: 50%/50%;
+  width: 16px;
+  height: 16px;
+}
+
+#slider1 .carousel-item div{
+  height: 35rem!important;
+  overflow: hidden;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#slider1 .carousel-inner div:nth-child(1) .header-slide{
+  background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+}
+
+#slider1 .carousel-inner div:nth-child(2) .header-slide{
+  background-image: url('https://www.boxofficepro.com/wp-content/uploads/2020/04/Santikos-lobby-post-renovation-scaled.jpg');
+  background-position: center;
+
+}
+
+#slider1 .carousel-inner div:nth-child(3) .header-slide{
+  background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNpbmVtYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80');
+}
+
+#slider2 .carousel-indicators li {
+  border-radius: 50%/50%;
+  width: 16px;
+  height: 16px;
+}
+
+#slider2 .carousel-item .movie-slide{
+  height: 35rem!important;
+  overflow: hidden;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#slider2 .carousel-inner div:nth-child(1) .movie-slide{
+  background-color: transparent;
+}
+
+#slider2 .carousel-inner div:nth-child(2) .movie-slide{
+  background-color: transparent;
+}
+
+#slider2 .carousel-inner div:nth-child(3) .movie-slide{
+  background-color: rgba(255,255,255,.5);
+}
+
+.navbar-brand {
+  background-image: url('../images/logo3.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 5.7rem;
+  width: 7rem;
+}
