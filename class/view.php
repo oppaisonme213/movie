@@ -94,10 +94,10 @@ class view extends config{
         echo "<label class='btn btn-sm btn-seat p-1 m-0'>
         ";
         if(boolval($data['is_available']) === true){
-          echo "<input type='radio' name='options' id='option1' autocomplete='off'>
+          echo "<input type='radio' name='seat_number' id='option' autocomplete='off' value=$data[seat_id]>
           <i class='btn-seat fas fa-couch text-dark d-block'></i>";
         }else if(boolval($data['is_available']) === false) {
-          echo "<input type='radio' name='options' id='option' autocomplete='off' disabled>
+          echo "<input type='radio' name='seat_number' id='option' autocomplete='off' disabled value=$data[seat_id]>
           <i class='btn-seat fas fa-couch text-white d-block'></i>";
         }
         echo "<p class='d-block'> $data[seat_number] </p>
@@ -185,6 +185,29 @@ class view extends config{
       }
       
     }
+  }
+
+  function getUser($firstname, $lastname, $email, $pass, $seatNumber){
+    $con = $this->con();
+    $sql = "SELECT * FROM `user_table` WHERE firstName = ? AND lastName = ? AND email = ? AND pass = ?;";
+
+    $data = $con->prepare($sql);
+    // $result=$data->fetchAll(PDO::FETCH_ASSOC);
+    try{
+      if($data->execute([$firstname, $lastname, $email, $pass])){
+        $result=$data->fetchAll(PDO::FETCH_ASSOC);
+        $this->bookSeat($result[0]['user_id'], $seatNumber);
+      }
+    }catch(PDOException $e){
+
+    }
+
+
+  }
+
+  function bookSeat($user_id, $seatNumber){
+    $insert = new insert;
+    $insert->bookSeat($user_id, $seatNumber);
   }
 }
 

@@ -4,7 +4,7 @@
     $insert = new insert;
     $insert->addUser($firstname, $lastname, $email, $password);
   }
-  
+
   function showMovies(){
     $view = new view;
     $view->viewMovies();
@@ -19,5 +19,10 @@
     $view = new view;
     $view->getSeats($movie_id);
 
+  }
+
+  function getUser($firstname, $lastname, $email, $pass, $seatNumber){
+    $view = new view;
+    $view->getUser($firstname, $lastname, $email, $pass, $seatNumber);
   }
 ?>

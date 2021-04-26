@@ -44,8 +44,6 @@
             echo '</div>';
             echo '</div>';
             echo '</div>';
-
-            
           ?>
 
           <div class="carousel-item">
@@ -55,34 +53,40 @@
           </div>
 
           <?php
-          showSnacks();
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-
+            showSnacks();
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
           ?>
             
 
           <div class="carousel-item">
             <div class="d-block w-100 movie-slide" alt="Forth slide">
-            <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
-            <?php
-              if(isset($_POST['submit'])){
-                getSeats($_POST['submit']);
-                echo '</div>';
+              <form action="" method="post">
+                <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+                  <?php
+                    if(isset($_POST['submit'])){
+                      getSeats($_POST['submit']);
+                      echo '</div>';
+                      require 'templates/form.php';
 
-                require 'templates/form.php';
-              }else {
-                echo '<h3 class="text-center text-white mt-5">Select a Movie to see available seating';
-              }
-            ?>
-            
-          </div>
-          
-          
-          </div>
-            
+                      
+                    }else {
+                      echo '<h3 class="text-center text-white mt-5">Select a Movie to see available seating';
+                      require 'templates/form.php';
+                    }
+                  ?>            
+                </div>
+                
+              </form>
+              <?php
+                if(isset($_POST['form-submit'])){
+
+                  getUser($_POST['firstName'],$_POST['lastName'],$_POST['email'],$_POST['password'],$_POST['seat_number']);
+                }
+                ?>
+            </div>  
           </div>
         </div>
       </div>

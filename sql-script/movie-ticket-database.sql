@@ -138,6 +138,7 @@ insert into seat_table(seat_number)values("H8");
 insert into seat_table(seat_number)values("H9");
 
 -- set which seats are available here ('movie_id', 'movie_id', 'maximum 10 randomly sets what seats are available') --
+-- THIS IS REQUIRED TO SET SEATS UNBOOKABLE --
 call setBooked(1, 1, 1);
 
 -- after setting booked view changes here and movie on to the next movie_id --
@@ -175,5 +176,37 @@ end while;
 
 end \\
 delimiter ;
+select * from movie_seat_table;
 
+update table movie_seat_table
+join user_table
+on movie_seat_table.user_id = user_table.user_id
+join seat_table
+on movie_seat_table.seat_id = seat_table.seat_id
+where user_table.email = email and user_table.pass = pass
+
+delimiter \\
+create procedure bookSeat(in user_id int, in seat int)
+begin
+
+update movie_seat_table
+join user_table
+on movie_seat_table.user_id = user_table.user_id
+join seat_table
+on movie_seat_table.seat_id = seat_table.seat_id
+set movie_seat_table.is_available = 0 and movie_seat_user_id = user_id 
+where movie_seat_table.movie_seat_id = seat;
+
+end \\
+delimiter ;
+
+delimiter \\
+create procedure verifyUser(in email varchar(255), in pass varchar(255), out user_id int)
+begin
+
+select user_table.user_id from user_table
+where user_table.email = email and user_table.pass = pass; 
+
+end \\
+delimiter ;
 
