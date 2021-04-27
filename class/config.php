@@ -2,7 +2,7 @@
 
   class config {
     private $username = 'root';
-    private $password = 'admin123';
+    private $password = '';
     public $pdo = null;
 
     public function con(){
