@@ -48,7 +48,7 @@ class view extends config{
           }
         }
 
-        echo "<div class='col-lg-3'>
+        echo "<div class='col-md-3'>
                 <div class='card'>
                 <img class='img-card-top' src=$data[image_path] alt='Card image cap'>
                   <div class='card-body m-auto text-center'>
@@ -78,8 +78,6 @@ class view extends config{
 
     $colCount= 0;
     $entries = 0;
-
-    // print_r($result);
 
     echo '<h3 class="text-center text-light py-4">'.$result[1]['movie_name'].'</h3>';
     echo '<span><img class="booking-img w-50 d-block ml-auto mr-auto mb-4" src='.$result[1]['image_path'].'></span>';

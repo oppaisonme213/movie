@@ -1,5 +1,4 @@
 <?php
-
   function registerUser($firstname, $lastname, $email, $password){
     $insert = new insert;
     $insert->addUser($firstname, $lastname, $email, $password);

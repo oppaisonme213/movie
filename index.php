@@ -89,14 +89,14 @@
         <hr>
 
         <div class="row">
-          <div class="col-5">
+          <div class="col-md-5">
             <div class="text-center">
               <img class="mt-5 pt-5"src="images/logo3.png">
             </div>
 
           </div>
 
-          <div class="col-7">
+          <div class="col-md-7">
           <h3 id="about_us" class="text-center mt-2 mb-5 text-light">About Us</h3>
 
             <div><h5 class="text-light pr-5">SkyFlixs is a Movie Theater company established in 2021, specializing in family entertainment. The bussiness is inspired mainly by the owner's wanting to provide entertainment at a decent price – since theaters are becoming more expensive, is an important part of a ceremony in entertaining customers, that reflects a sign of respect and value for the guests. <br><br>SkyFlixs guarentees enjoyment and fun at a decent price with your money back guarenteed.</h5>
