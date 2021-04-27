@@ -180,7 +180,7 @@ class view extends config{
           }
         }
 
-          echo " <div class='col-lg-3'>
+          echo " <div class='col-md-3'>
                   <div class='card'>
                     <img class='img-card-top' src=$data[image_source] alt='Card image cap'>
                     <div class='card-body m-auto text-center'>

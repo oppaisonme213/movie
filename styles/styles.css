@@ -65,13 +65,14 @@ body {
   height: fit-content;
   padding: 4rem;
   border-radius: 6%/6%;
-  width: 55%;
+  min-width: 55%;
 }
 
 .movies1 {
   margin: auto;
   box-shadow: 11px 17px 30px 12px rgb(105, 105, 105);
   width: fit-content;
+  min-width: 50%
 }
 
 .movie-slide {
